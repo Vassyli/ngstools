@@ -1,0 +1,22 @@
+##gff-version 3
+#date Mon Jun 13 19:50:04 2016
+#
+# Saccharomyces cerevisiae S288C genome (version=R64-2-1)
+#
+# Features from the 16 nuclear chromosomes labeled chrI to chrXVI,
+# plus the mitochondrial genome labeled chrmt.
+#
+# Created by Saccharomyces Genome Database (http://www.yeastgenome.org/)
+#
+# Weekly updates of this file are available for download from:
+# http://downloads.yeastgenome.org/curation/chromosomal_feature/saccharomyces_cerevisiae.gff
+#
+# Please send comments and suggestions to sgd-helpdesk@lists.stanford.edu
+#
+# SGD is funded as a National Human Genome Research Institute Biomedical Informatics Resource from
+# the U. S. National Institutes of Health to Stanford University.
+#
+chrI	assembly	chromosome	1	35	.	.	.	ID=chrI;Name=chrI
+chrI	mindyou	chromosome	10	15	.	+	.	ID=GEN001A;Name=GEN001A
+chrII	assembly	chromosome	1	35	.	.	.	ID=chrII;Name=chrII
+chrII	mindyou	chromosome	10	15	.	-	.	ID=GEN002A;Name=GEN002A
