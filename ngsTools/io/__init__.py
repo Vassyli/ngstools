@@ -8,6 +8,7 @@ from .GenomFeatureReader import GenomFeatureReader
 from .GenomReader import GenomReader
 from .SamReader import SamReader, SamAlignedRead
 from .BaseAlignedRead import BaseAlignedRead
+from .BedtoolsIntersectionReader import BedtoolsIntersectionReader, BedtoolsIntersectionItem
 
 _extension_to_reader = {
     "sam": SamReader.open,

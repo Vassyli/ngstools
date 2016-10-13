@@ -124,6 +124,26 @@ class TestGenomFeatureReader(unittest.TestCase):
         assert genom[features["GEN001A"]] == "ATGCGA"
         assert genom[features["GEN002A"]] == "TAGCTG"
 
+class TestBedtoolsIntersectionReader(unittest.TestCase):
+    def test_opening(self):
+        intersection = io.BedtoolsIntersectionReader.open("tests/test_data/intersect.tab")
+
+        count = 0
+        for read in intersection:
+            count += 1
+
+        assert count == 2
+
+    def test_intersection_to_genom_slice(self):
+        intersection = io.BedtoolsIntersectionReader.open("tests/test_data/intersect.tab")
+        genom = io.read("tests/test_data/genom.fasta")
+
+        items = []
+        for item in intersection:
+            items.append(item)
+
+        assert genom[items[0]] == "TGCGT"
+        assert genom[items[1]] == "CTGATC"
 
 if __name__ == '__main__':
     unittest.main()
