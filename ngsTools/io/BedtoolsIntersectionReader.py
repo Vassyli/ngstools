@@ -47,3 +47,8 @@ class BedtoolsIntersectionItem(BaseAlignedRead):
     @property
     def queryName(self):
         return self._qname
+
+    @property
+    def feature_id(self):
+        return self._fid
+

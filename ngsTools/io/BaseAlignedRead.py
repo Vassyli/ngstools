@@ -41,6 +41,9 @@ class BaseAlignedRead:
         """ -1 if reverse Complemented should be used instead. """
         return -1 if self.isReverseComplemented is True else None
 
+    def __len__(self):
+        return self.stop - self.start
+
     @property
     def isReverseComplemented(self):
         """ Is True if the actual sequence is the reverse complement."""
@@ -114,12 +117,12 @@ class BaseAlignedRead:
             raise TypeError("right and left need to be >= 0")
 
         new_start = self.start + left
-        new_stop = self.start - right
+        new_stop = self.stop - right
 
         if new_stop <= new_start:
             raise TypeError("The new right end is at the position or smaller than the new small end.")
 
-        new_sequence = self._seq[left:-right]
+        new_sequence = self._seq[left:(-right if right > 0 else None)]
 
         if self.isReverseComplemented:
             return __class__(new_sequence, new_start, self._chromosome, True)

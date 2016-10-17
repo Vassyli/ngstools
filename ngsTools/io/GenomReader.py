@@ -127,9 +127,9 @@ class GenomReader(BaseReader):
 
             if startFound and stopFound:
                 if slicePiece.step == -1:
-                    ret.append(get_reverse_complement(sequence))
+                    ret.append(get_reverse_complement(sequence).upper())
                 else:
-                    ret.append(sequence)
+                    ret.append(sequence.upper())
             elif startFound and not stopFound:
                 raise Exception("Out of Boundaries exception: ", slicePiece)
 

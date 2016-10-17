@@ -14,6 +14,7 @@ _extension_to_reader = {
     "sam": SamReader.open,
     "fasta": GenomReader.open,
     "fa": GenomReader.open,
+    "fna": GenomReader.open,
     "gff": GenomFeatureReader.open
 }
 

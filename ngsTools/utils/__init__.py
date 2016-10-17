@@ -49,6 +49,6 @@ def get_reverse_complement(sequence):
     revCompl = ""
 
     for nucleotide in sequence[::-1]:
-        revCompl += _nucleotide_complement_map[nucleotide]
+        revCompl += _nucleotide_complement_map[nucleotide.upper()]
 
     return revCompl
